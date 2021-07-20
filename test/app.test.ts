@@ -1,5 +1,3 @@
-jest.mock('./../src/greedy.route');
-
 describe('starting unit tests', () => {
     let app;
     let expressMock;
@@ -16,8 +14,12 @@ describe('starting unit tests', () => {
             expressMock = jest.fn().mockReturnValueOnce(server);
             return expressMock;
         });
-        app = require('./../src/app');
 
+        jest.doMock('./../src/greedy.route', () => ({
+            useRoute: jest.fn()
+        }));
+
+        app = require('./../src/app');
         greedy = require('./../src/greedy.route');
     });
 
@@ -34,7 +36,7 @@ describe('starting unit tests', () => {
             app.bootstrap();
 
             expect(expressMock).toBeCalled();
-            expect(server.get).toBeCalledWith(greedy.route, greedy.method);
+            expect(greedy.useRoute).toBeCalledWith(server);
             expect(server.listen).toBeCalledWith(3000, expect.any(Function));
         });
     });
@@ -43,9 +45,9 @@ describe('starting unit tests', () => {
 /**
 
  FileUpload
-    Uploader::S3
-       presignedUrl
-         Configurefile
-         WebClient
-            Axios
+ Uploader::S3
+ presignedUrl
+ Configurefile
+ WebClient
+ Axios
  */
