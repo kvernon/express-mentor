@@ -1,5 +1,5 @@
 const express = require('express');
-const greedy = require('./greedy.route');
+const greedy = require('./routes/greedy.route');
 
 module.exports.bootstrap = () => {
     const app = express();

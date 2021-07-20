@@ -1,8 +1,6 @@
-'use strict';
+const route = require('../src/routes/file-upload.route');
 
-const route = require('../src/routes/greedy.route');
-
-describe('greedy.route unit tests', () => {
+describe('file-upload.route unit tests', () => {
     describe('and useRoute', () => {
         test('should call', () => {
             const server = {get: jest.fn()};
@@ -16,12 +14,12 @@ describe('greedy.route unit tests', () => {
     describe('and calling route', () => {
         test('should return "hello"', () => {
             const response = {
-                send: jest.fn()
+                status: jest.fn()
             };
 
-            route.getHello(null, response);
+            route.postUpload(null, response);
 
-            expect(response.send).toBeCalledWith('hello');
+            expect(response.status).toBeCalledWith(202);
         });
     });
 });

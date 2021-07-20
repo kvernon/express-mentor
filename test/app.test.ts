@@ -15,12 +15,12 @@ describe('starting unit tests', () => {
             return expressMock;
         });
 
-        jest.doMock('./../src/greedy.route', () => ({
+        jest.doMock('../src/routes/greedy.route', () => ({
             useRoute: jest.fn()
         }));
 
         app = require('./../src/app');
-        greedy = require('./../src/greedy.route');
+        greedy = require('../src/routes/greedy.route');
     });
 
     afterEach(() => {
