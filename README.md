@@ -16,3 +16,9 @@ Our goal is to take multiple files and pass them up to S3, showing each progress
 + we discuss why
 + we collaborate
 
+## From Searching the web
+
+1. https://www.codepedia.org/ama/complete-example-of-how-to-upload-images-to-amazon-s3-bucket-from-angular-via-express
+2. http://expressjs.com/en/4x/api.html
+3. http://expressjs.com/en/resources/middleware/body-parser.html
+
