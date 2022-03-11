@@ -11,11 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.950.0",
-    "express": "^4.17.1"
+    "aws-sdk": "^2.1091.0",
+    "express": "^4.17.3"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/jest": "^26.0.24",
-    "jest": "^27.0.6"
+    "jest": "^27.5.1"
   }
 }
